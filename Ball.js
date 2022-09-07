@@ -19,7 +19,7 @@ class Ball {
         } else if(this.pos.y + this.r > height){
             // this.pos.y = height - this.r
             // this.vel.y *= -1
-            gameOver = true
+            game.over = true
         }
     }
 
@@ -32,7 +32,13 @@ class Ball {
         ellipse(this.pos.x, this.pos.y, this.r * 2)
     }
 
-    update(){
+    update(count){
+        // console.log(count % 10)
+        if(count % 40 == 0){
+            // console.log('speeding up')
+            this.vel.mult(1.01)
+            
+        }
         this.move()
         this.checkEdges()
     }

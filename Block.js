@@ -14,7 +14,7 @@ class Block {
             if(checkCircleRectCollision(ball.pos.x, ball.pos.y, ball.r, this.x, this.y, this.w, this.h)){
                 this.gone = true
                 ball.vel.y *= -1
-                score ++
+                game.score ++
             }
         }
 
